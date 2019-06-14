@@ -1,0 +1,609 @@
+'Dynamic Timeline - written by Benjamin Pardue
+Sub CheckBox1_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox2_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox3_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox4_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox5_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox6_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox7_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox8_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox9_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox10_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox11_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox12_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox13_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox14_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox15_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox16_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox17_Click()
+DefineCollections
+End Sub
+
+Sub CheckBox18_Click()
+DefineCollections
+End Sub
+
+Sub DefineCollections()
+    'Clear the Console Range
+    Range("a2:c2000").Clear
+    
+    'Rename the Check Boxes
+    CheckBox1.Caption = Sheets("InputTimeline").Range("a1")
+    CheckBox2.Caption = Sheets("InputTimeline").Range("e1")
+    CheckBox3.Caption = Sheets("InputTimeline").Range("i1")
+    CheckBox4.Caption = Sheets("InputTimeline").Range("m1")
+    CheckBox5.Caption = Sheets("InputTimeline").Range("q1")
+    CheckBox6.Caption = Sheets("InputTimeline").Range("u1")
+    CheckBox7.Caption = Sheets("InputTimeline").Range("y1")
+    CheckBox8.Caption = Sheets("InputTimeline").Range("ac1")
+    CheckBox9.Caption = Sheets("InputTimeline").Range("ag1")
+    CheckBox10.Caption = Sheets("InputTimeline").Range("ak1")
+    CheckBox11.Caption = Sheets("InputTimeline").Range("ao1")
+    CheckBox12.Caption = Sheets("InputTimeline").Range("as1")
+    CheckBox13.Caption = Sheets("InputTimeline").Range("aw1")
+    CheckBox14.Caption = Sheets("InputTimeline").Range("ba1")
+    CheckBox15.Caption = Sheets("InputTimeline").Range("be1")
+    CheckBox16.Caption = Sheets("InputTimeline").Range("bi1")
+    CheckBox17.Caption = Sheets("InputTimeline").Range("bm1")
+    CheckBox18.Caption = Sheets("InputTimeline").Range("bq1")
+    
+    'define the arrays and their lengths as the count of each range
+    Dim firstDates() As Variant, firstLength As Integer
+    firstLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("a3:a100")) - 1
+    ReDim firstDates(firstLength, 4)
+    
+    Dim secondDates() As Variant, secondLength As Integer
+    secondLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("e3:e100")) - 1
+    ReDim secondDates(secondLength, 4)
+    
+    Dim thirdDates() As Variant, thirdLength As Integer
+    thirdLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("i3:i100")) - 1
+    ReDim thirdDates(thirdLength, 4)
+    
+    Dim fourthDates() As Variant, fourthLength As Integer
+    fourthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("m3:m100")) - 1
+    ReDim fourthDates(firstLength, 4)
+    
+    Dim fifthDates() As Variant, fifthLength As Integer
+    fifthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("q3:q100")) - 1
+    ReDim fifthDates(firstLength, 4)
+    
+    Dim sixthDates() As Variant, sixthLength As Integer
+    sixthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("u3:u100")) - 1
+    ReDim sixthDates(firstLength, 4)
+    
+    Dim seventhDates() As Variant, seventhLength As Integer
+    seventhLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("y3:y100")) - 1
+    ReDim seventhDates(firstLength, 4)
+    
+    Dim eighthDates() As Variant, eighthLength As Integer
+    eighthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("ac3:ac100")) - 1
+    ReDim eighthDates(firstLength, 4)
+    
+    Dim ninthDates() As Variant, ninthLength As Integer
+    ninthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("ag3:ag100")) - 1
+    ReDim ninthDates(firstLength, 4)
+    
+    Dim tenthDates() As Variant, tenthLength As Integer
+    tenthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("ak3:ak100")) - 1
+    ReDim tenthDates(firstLength, 4)
+    
+    Dim eleventhDates() As Variant, eleventhLength As Integer
+    eleventhLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("ao3:ao100")) - 1
+    ReDim eleventhDates(firstLength, 4)
+    
+    Dim twelthDates() As Variant, twelthLength As Integer
+    twelthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("as3:as100")) - 1
+    ReDim twelthDates(firstLength, 4)
+    
+    Dim thirteenthDates() As Variant, thirteenthLength As Integer
+    thirteenthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("aw3:aw100")) - 1
+    ReDim thirteenthDates(firstLength, 4)
+    
+    Dim fourteenthDates() As Variant, fourteenthLength As Integer
+    fourteenthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("ba3:ba100")) - 1
+    ReDim fourteenthDates(firstLength, 4)
+    
+    Dim fifteenthDates() As Variant, fifteenthLength As Integer
+    fifteenthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("be3:be100")) - 1
+    ReDim fifteenthDates(firstLength, 4)
+    
+    Dim sixteenthDates() As Variant, sixteenthLength As Integer
+    sixteenthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("bi3:bi100")) - 1
+    ReDim sixteenthDates(firstLength, 4)
+    
+    Dim seventeenthDates() As Variant, seventeenthLength As Integer
+    seventeenthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("bm3:bm100")) - 1
+    ReDim seventeenthDates(firstLength, 4)
+    
+    Dim eighteenthDates() As Variant, eithteenthLength As Integer
+    eithteenthLength = Application.WorksheetFunction.CountA(Sheets("InputTimeline").Range("bq3:bq100")) - 1
+    ReDim eighteenthDates(firstLength, 4)
+    
+    'define individual arrays by ranges in input tab
+    Dim i As Long
+    
+    For i = LBound(firstDates) To UBound(firstDates)
+    firstDates(i, 0) = Sheets("InputTimeline").Range("a3").Offset(i, 0).value
+    firstDates(i, 1) = Sheets("InputTimeline").Range("b3").Offset(i, 0).value
+    firstDates(i, 2) = Sheets("InputTimeline").Range("a1").value
+    firstDates(i, 3) = Sheets("InputTimeline").Range("a3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(secondDates) To UBound(secondDates)
+    secondDates(i, 0) = Sheets("InputTimeline").Range("e3").Offset(i, 0).value
+    secondDates(i, 1) = Sheets("InputTimeline").Range("f3").Offset(i, 0).value
+    secondDates(i, 2) = Sheets("InputTimeline").Range("e1").value
+    secondDates(i, 3) = Sheets("InputTimeline").Range("e3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(thirdDates) To UBound(thirdDates)
+    thirdDates(i, 0) = Sheets("InputTimeline").Range("i3").Offset(i, 0).value
+    thirdDates(i, 1) = Sheets("InputTimeline").Range("j3").Offset(i, 0).value
+    thirdDates(i, 2) = Sheets("InputTimeline").Range("i1").value
+    thirdDates(i, 3) = Sheets("InputTimeline").Range("i3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(fourthDates) To UBound(fourthDates)
+    fourthDates(i, 0) = Sheets("InputTimeline").Range("m3").Offset(i, 0).value
+    fourthDates(i, 1) = Sheets("InputTimeline").Range("n3").Offset(i, 0).value
+    fourthDates(i, 2) = Sheets("InputTimeline").Range("m1").value
+    fourthDates(i, 3) = Sheets("InputTimeline").Range("m3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(fifthDates) To UBound(fifthDates)
+    fifthDates(i, 0) = Sheets("InputTimeline").Range("q3").Offset(i, 0).value
+    fifthDates(i, 1) = Sheets("InputTimeline").Range("r3").Offset(i, 0).value
+    fifthDates(i, 2) = Sheets("InputTimeline").Range("q1").value
+    fifthDates(i, 3) = Sheets("InputTimeline").Range("q3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(sixthDates) To UBound(sixthDates)
+    sixthDates(i, 0) = Sheets("InputTimeline").Range("u3").Offset(i, 0).value
+    sixthDates(i, 1) = Sheets("InputTimeline").Range("v3").Offset(i, 0).value
+    sixthDates(i, 2) = Sheets("InputTimeline").Range("u1").value
+    sixthDates(i, 3) = Sheets("InputTimeline").Range("u3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(seventhDates) To UBound(seventhDates)
+    seventhDates(i, 0) = Sheets("InputTimeline").Range("y3").Offset(i, 0).value
+    seventhDates(i, 1) = Sheets("InputTimeline").Range("z3").Offset(i, 0).value
+    seventhDates(i, 2) = Sheets("InputTimeline").Range("y1").value
+    seventhDates(i, 3) = Sheets("InputTimeline").Range("y3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(eighthDates) To UBound(eighthDates)
+    eighthDates(i, 0) = Sheets("InputTimeline").Range("ac3").Offset(i, 0).value
+    eighthDates(i, 1) = Sheets("InputTimeline").Range("ad3").Offset(i, 0).value
+    eighthDates(i, 2) = Sheets("InputTimeline").Range("ac1").value
+    eighthDates(i, 3) = Sheets("InputTimeline").Range("ac3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(ninthDates) To UBound(ninthDates)
+    ninthDates(i, 0) = Sheets("InputTimeline").Range("ag3").Offset(i, 0).value
+    ninthDates(i, 1) = Sheets("InputTimeline").Range("ah3").Offset(i, 0).value
+    ninthDates(i, 2) = Sheets("InputTimeline").Range("ag1").value
+    ninthDates(i, 3) = Sheets("InputTimeline").Range("ag3").Offset(i, 2).value
+    Next i
+    
+    For i = LBound(tenthDates) To UBound(tenthDates)
+    tenthDates(i, 0) = Sheets("InputTimeline").Range("ak3").Offset(i, 0).value
+    tenthDates(i, 1) = Sheets("InputTimeline").Range("al3").Offset(i, 0).value
+    tenthDates(i, 2) = Sheets("InputTimeline").Range("ak1").value
+    tenthDates(i, 3) = Sheets("InputTimeline").Range("ak3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(eleventhDates) To UBound(eleventhDates)
+    eleventhDates(i, 0) = Sheets("InputTimeline").Range("ao3").Offset(i, 0).value
+    eleventhDates(i, 1) = Sheets("InputTimeline").Range("ap3").Offset(i, 0).value
+    eleventhDates(i, 2) = Sheets("InputTimeline").Range("ao1").value
+    eleventhDates(i, 3) = Sheets("InputTimeline").Range("ao3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(twelthDates) To UBound(twelthDates)
+    twelthDates(i, 0) = Sheets("InputTimeline").Range("as3").Offset(i, 0).value
+    twelthDates(i, 1) = Sheets("InputTimeline").Range("at3").Offset(i, 0).value
+    twelthDates(i, 2) = Sheets("InputTimeline").Range("as1").value
+    twelthDates(i, 3) = Sheets("InputTimeline").Range("as3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(thirteenthDates) To UBound(thirteenthDates)
+    thirteenthDates(i, 0) = Sheets("InputTimeline").Range("aw3").Offset(i, 0).value
+    thirteenthDates(i, 1) = Sheets("InputTimeline").Range("ax3").Offset(i, 0).value
+    thirteenthDates(i, 2) = Sheets("InputTimeline").Range("aw1").value
+    thirteenthDates(i, 3) = Sheets("InputTimeline").Range("aw3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(fourteenthDates) To UBound(fourteenthDates)
+    fourteenthDates(i, 0) = Sheets("InputTimeline").Range("ba3").Offset(i, 0).value
+    fourteenthDates(i, 1) = Sheets("InputTimeline").Range("bb3").Offset(i, 0).value
+    fourteenthDates(i, 2) = Sheets("InputTimeline").Range("ba1").value
+    fourteenthDates(i, 3) = Sheets("InputTimeline").Range("ba3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(fifteenthDates) To UBound(fifteenthDates)
+    fifteenthDates(i, 0) = Sheets("InputTimeline").Range("be3").Offset(i, 0).value
+    fifteenthDates(i, 1) = Sheets("InputTimeline").Range("bf3").Offset(i, 0).value
+    fifteenthDates(i, 2) = Sheets("InputTimeline").Range("be1").value
+    fifteenthDates(i, 3) = Sheets("InputTimeline").Range("be3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(sixteenthDates) To UBound(sixteenthDates)
+    sixteenthDates(i, 0) = Sheets("InputTimeline").Range("bi3").Offset(i, 0).value
+    sixteenthDates(i, 1) = Sheets("InputTimeline").Range("bj3").Offset(i, 0).value
+    sixteenthDates(i, 2) = Sheets("InputTimeline").Range("bi1").value
+    sixteenthDates(i, 3) = Sheets("InputTimeline").Range("bi3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(seventeenthDates) To UBound(seventeenthDates)
+    seventeenthDates(i, 0) = Sheets("InputTimeline").Range("bm3").Offset(i, 0).value
+    seventeenthDates(i, 1) = Sheets("InputTimeline").Range("bn3").Offset(i, 0).value
+    seventeenthDates(i, 2) = Sheets("InputTimeline").Range("bm1").value
+    seventeenthDates(i, 3) = Sheets("InputTimeline").Range("bm3").Offset(i, 2).value
+    Next i
+
+    For i = LBound(eighteenthDates) To UBound(eighteenthDates)
+    eighteenthDates(i, 0) = Sheets("InputTimeline").Range("bq3").Offset(i, 0).value
+    eighteenthDates(i, 1) = Sheets("InputTimeline").Range("br3").Offset(i, 0).value
+    eighteenthDates(i, 2) = Sheets("InputTimeline").Range("bq1").value
+    eighteenthDates(i, 3) = Sheets("InputTimeline").Range("bq3").Offset(i, 2).value
+    Next i
+    
+    'define alldates() as an array and ReDim it as the sum of the length of the other arrays
+    Dim allDates() As Variant, allLength As Integer
+    allLength = 0
+    'allLength = (UBound(firstDates) - LBound(firstDates) + 1) + (UBound(secondDates) - LBound(secondDates) + 1) + (UBound(thirdDates) - LBound(thirdDates) + 1) _
+    + (UBound(fourthDates) - LBound(fourthDates) + 1) + (UBound(fifthDates) - LBound(fifthDates) + 1) + (UBound(sixthDates) - LBound(sixthDates) + 1) _
+    + (UBound(seventhDates) - LBound(seventhDates) + 1) + (UBound(eighthDates) - LBound(eighthDates) + 1) + (UBound(ninthDates) - LBound(ninthDates) + 1) _
+    + (UBound(tenthDates) - LBound(tenthDates) + 1) + (UBound(eleventhDates) - LBound(eleventhDates) + 1) + (UBound(twelthDates) - LBound(twelthDates) + 1) _
+    + (UBound(thirteenthDates) - LBound(thirteenthDates) + 1) + (UBound(fourteenthDates) - LBound(fourteenthDates) + 1) + (UBound(fifteenthDates) - LBound(fifteenthDates) + 1) _
+    + (UBound(sixteenthDates) - LBound(sixteenthDates) + 1) + (UBound(seventeenthDates) - LBound(seventeenthDates) + 1) + (UBound(eighteenthDates) - LBound(eighteenthDates) + 1)
+    '----------------------------------------------------------------------
+    If CheckBox1.value = True Then
+    allLength = allLength + (UBound(firstDates) - LBound(firstDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox2.value = True Then
+    allLength = allLength + (UBound(secondDates) - LBound(secondDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+        
+    If CheckBox3.value = True Then
+    allLength = allLength + (UBound(thirdDates) - LBound(thirdDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox4.value = True Then
+    allLength = allLength + (UBound(fourthDates) - LBound(fourthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox5.value = True Then
+    allLength = allLength + (UBound(fifthDates) - LBound(fifthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox6.value = True Then
+    allLength = allLength + (UBound(sixthDates) - LBound(sixthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox7.value = True Then
+    allLength = allLength + (UBound(seventhDates) - LBound(seventhDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox8.value = True Then
+    allLength = allLength + (UBound(eighthDates) - LBound(eighthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox9.value = True Then
+    allLength = allLength + (UBound(ninthDates) - LBound(ninthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox10.value = True Then
+    allLength = allLength + (UBound(tenthDates) - LBound(tenthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox11.value = True Then
+    allLength = allLength + (UBound(eleventhDates) - LBound(eleventhDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox12.value = True Then
+    allLength = allLength + (UBound(twelthDates) - LBound(twelthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox13.value = True Then
+    allLength = allLength + (UBound(thirteenthDates) - LBound(thirteenthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox14.value = True Then
+    allLength = allLength + (UBound(fourteenthDates) - LBound(fourteenthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox15.value = True Then
+    allLength = allLength + (UBound(fifteenthDates) - LBound(fifteenthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox16.value = True Then
+    allLength = allLength + (UBound(sixteenthDates) - LBound(sixteenthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox17.value = True Then
+    allLength = allLength + (UBound(seventeenthDates) - LBound(seventeenthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    If CheckBox18.value = True Then
+    allLength = allLength + (UBound(eighteenthDates) - LBound(eighteenthDates) + 1)
+    ReDim allDates(allLength, 4)
+    End If
+    
+    'Add the values of each individual array to the console array
+    Dim counter As Integer
+    If CheckBox1.value = True Then
+    For i = LBound(firstDates) To UBound(firstDates)
+        allDates(counter, 0) = firstDates(i, 0)
+        allDates(counter, 1) = firstDates(i, 1)
+        allDates(counter, 2) = firstDates(i, 2)
+        allDates(counter, 3) = firstDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox2.value = True Then
+    For i = LBound(secondDates) To UBound(secondDates)
+        allDates(counter, 0) = secondDates(i, 0)
+        allDates(counter, 1) = secondDates(i, 1)
+        allDates(counter, 2) = secondDates(i, 2)
+        allDates(counter, 3) = secondDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+        
+    If CheckBox3.value = True Then
+    For i = LBound(thirdDates) To UBound(thirdDates)
+        allDates(counter, 0) = thirdDates(i, 0)
+        allDates(counter, 1) = thirdDates(i, 1)
+        allDates(counter, 2) = thirdDates(i, 2)
+        allDates(counter, 3) = thirdDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox4.value = True Then
+    For i = LBound(fourthDates) To UBound(fourthDates)
+        allDates(counter, 0) = fourthDates(i, 0)
+        allDates(counter, 1) = fourthDates(i, 1)
+        allDates(counter, 2) = fourthDates(i, 2)
+        allDates(counter, 3) = fourthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox5.value = True Then
+    For i = LBound(fifthDates) To UBound(fifthDates)
+        allDates(counter, 0) = fifthDates(i, 0)
+        allDates(counter, 1) = fifthDates(i, 1)
+        allDates(counter, 2) = fifthDates(i, 2)
+        allDates(counter, 3) = fifthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox6.value = True Then
+    For i = LBound(sixthDates) To UBound(sixthDates)
+        allDates(counter, 0) = sixthDates(i, 0)
+        allDates(counter, 1) = sixthDates(i, 1)
+        allDates(counter, 2) = sixthDates(i, 2)
+        allDates(counter, 3) = sixthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox7.value = True Then
+    For i = LBound(seventhDates) To UBound(seventhDates)
+        allDates(counter, 0) = seventhDates(i, 0)
+        allDates(counter, 1) = seventhDates(i, 1)
+        allDates(counter, 2) = seventhDates(i, 2)
+        allDates(counter, 3) = seventhDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox8.value = True Then
+    For i = LBound(eighthDates) To UBound(eighthDates)
+        allDates(counter, 0) = eighthDates(i, 0)
+        allDates(counter, 1) = eighthDates(i, 1)
+        allDates(counter, 2) = eighthDates(i, 2)
+        allDates(counter, 3) = eighthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox9.value = True Then
+    For i = LBound(ninthDates) To UBound(ninthDates)
+        allDates(counter, 0) = ninthDates(i, 0)
+        allDates(counter, 1) = ninthDates(i, 1)
+        allDates(counter, 2) = ninthDates(i, 2)
+        allDates(counter, 3) = ninthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox10.value = True Then
+    For i = LBound(tenthDates) To UBound(tenthDates)
+        allDates(counter, 0) = tenthDates(i, 0)
+        allDates(counter, 1) = tenthDates(i, 1)
+        allDates(counter, 2) = tenthDates(i, 2)
+        allDates(counter, 3) = tenthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox11.value = True Then
+    For i = LBound(eleventhDates) To UBound(eleventhDates)
+        allDates(counter, 0) = eleventhDates(i, 0)
+        allDates(counter, 1) = eleventhDates(i, 1)
+        allDates(counter, 2) = eleventhDates(i, 2)
+        allDates(counter, 3) = eleventhDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox12.value = True Then
+    For i = LBound(twelthDates) To UBound(twelthDates)
+        allDates(counter, 0) = twelthDates(i, 0)
+        allDates(counter, 1) = twelthDates(i, 1)
+        allDates(counter, 2) = twelthDates(i, 2)
+        allDates(counter, 3) = twelthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox13.value = True Then
+    For i = LBound(thirteenthDates) To UBound(thirteenthDates)
+        allDates(counter, 0) = thirteenthDates(i, 0)
+        allDates(counter, 1) = thirteenthDates(i, 1)
+        allDates(counter, 2) = thirteenthDates(i, 2)
+        allDates(counter, 3) = thirteenthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox14.value = True Then
+    For i = LBound(fourteenthDates) To UBound(fourteenthDates)
+        allDates(counter, 0) = fourteenthDates(i, 0)
+        allDates(counter, 1) = fourteenthDates(i, 1)
+        allDates(counter, 2) = fourteenthDates(i, 2)
+        allDates(counter, 3) = fourteenthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox15.value = True Then
+    For i = LBound(fifteenthDates) To UBound(fifteenthDates)
+        allDates(counter, 0) = fifteenthDates(i, 0)
+        allDates(counter, 1) = fifteenthDates(i, 1)
+        allDates(counter, 2) = fifteenthDates(i, 2)
+        allDates(counter, 3) = fifteenthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox16.value = True Then
+    For i = LBound(sixteenthDates) To UBound(sixteenthDates)
+        allDates(counter, 0) = sixteenthDates(i, 0)
+        allDates(counter, 1) = sixteenthDates(i, 1)
+        allDates(counter, 2) = sixteenthDates(i, 2)
+        allDates(counter, 3) = sixteenthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox17.value = True Then
+    For i = LBound(seventeenthDates) To UBound(seventeenthDates)
+        allDates(counter, 0) = seventeenthDates(i, 0)
+        allDates(counter, 1) = seventeenthDates(i, 1)
+        allDates(counter, 2) = seventeenthDates(i, 2)
+        allDates(counter, 3) = seventeenthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+    
+    If CheckBox18.value = True Then
+    For i = LBound(eighteenthDates) To UBound(eighteenthDates)
+        allDates(counter, 0) = eighteenthDates(i, 0)
+        allDates(counter, 1) = eighteenthDates(i, 1)
+        allDates(counter, 2) = eighteenthDates(i, 2)
+        allDates(counter, 3) = eighteenthDates(i, 3)
+        counter = counter + 1
+        Next i
+    End If
+
+    'put allDates array into the console
+    Dim w As Worksheet
+    Dim r As Range
+    Set w = ThisWorkbook.Worksheets("Console")
+    
+    If allLength > 0 Then
+        Set r = w.Range("A2", w.Range("A2").Offset(UBound(allDates, 1) - 1, UBound(allDates, 2) - 1))
+        w.Range("A2", w.Range("A2").Offset(UBound(allDates, 1) - 1, UBound(allDates, 2) - 1)) = allDates
+        r.Sort Key1:=r.Cells(1, 1)
+        allDates = r
+    End If
+    
+    Set r = Nothing
+    Application.DisplayAlerts = False
+    Application.DisplayAlerts = True
+    
+    w.Range("a:a").NumberFormat = "MM/DD/YYYY"
+    Set w = Nothing
+
+End Sub
+
+Function ToCollection(a As Variant) As Collection
+    Dim c As New Collection
+    For Each Item In a
+      c.Add Item
+    Next Item
+    Set ToCollection = c
+End Function
